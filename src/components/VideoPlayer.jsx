@@ -1,18 +1,12 @@
-// import exampleVideoData from '../data/exampleVideoData.js';
-// import VideoList from './Vi
-
-var VideoPlayer = (props) => {
-  // currently props = entire video list
-  // we want props to be a single video
-  console.log(props.videos)
+var VideoPlayer = ({video}) => {
   return (
     <div className="video-player">
       <div className="embed-responsive embed-responsive-16by9">
-        <iframe className="embed-responsive-item" src={"https://www.youtube.com/embed/" + props.video.id.videoId} allowFullScreen></iframe>
+        <iframe className="embed-responsive-item" src={`https://www.youtube.com/embed/${video.id.videoId}`} allowFullScreen></iframe>
       </div>
       <div className="video-player-details">
-        <h3>{props.video.snippet.title}</h3>
-        <div>{props.video.snippet.description}</div>
+        <h3>{video.snippet.title}</h3>
+        <div>{video.snippet.description}</div>
       </div>
     </div>
   );
